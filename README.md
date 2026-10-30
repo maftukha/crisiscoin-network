@@ -1,4 +1,4 @@
-Tentu! Berikut adalah draf teks deskripsi dalam bahasa Inggris yang sangat profesional dan bersih, yang bisa langsung Anda salin dan tempel ke dalam file **`README.md`** di repository GitHub Anda (`crisiscoin-network`):
+
 
 ---
 
