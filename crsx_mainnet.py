@@ -134,10 +134,6 @@ class SQLiteBlockchain:
             }
         return None
 
-    def get_chain_length(self):
-        self.cursor.execute('SELECT COUNT(*) FROM blocks')
-        return self.cursor.fetchone()[0]
-
     def add_block(self, block):
         self.cursor.execute('''
             INSERT INTO blocks VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -324,8 +320,6 @@ def handle_secure_connection(ssock, addr, node):
 def start_secure_server(node, port):
     server_cert = "server.crt"
     server_key = "server.key"
-    
-    generate_self_signed_cert(server_cert, server_key)
 
     context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
     if os.path.exists(server_cert) and os.path.exists(server_key):
@@ -434,9 +428,13 @@ if __name__ == "__main__":
     print(f" Node Wallet Address : {address}")
     print("==================================================\n")
     
+    # Generate SSL cert safely in the main thread before spawning background threads
+    generate_self_signed_cert("server.crt", "server.key")
+    
     node = CrisisCoinSecureNode(port)
     
     # Connect to peers retrieved from GitHub
+    threading.Thread(target=connect_to_pens = None, args=(node,), daemon=True).start() # Atau target=connect_to_peers
     threading.Thread(target=connect_to_peers, args=(node,), daemon=True).start()
     
     # Start Secure TLS Network Server
