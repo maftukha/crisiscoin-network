@@ -5,7 +5,8 @@
 ```markdown
 # Crisis Coin (CRSX) Secure Global Mainnet
 
-Crisis Coin (CRSX) is a secure, decentralized, Python-native Proof-of-Work (PoW) blockchain network equipped with TLS encryption, SQLite persistence, and dynamic GitHub-hosted peer discovery.
+Crisis Coin (CRSX) is a secure, decentralized, Python-native Proof-of-Work (PoW) blockchain network equipped with
+TLS encryption, SQLite persistence, and dynamic GitHub-hosted peer discovery.
 
 ---
 
